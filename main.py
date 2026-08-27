@@ -1,3 +1,18 @@
+contacts = []
+
+
+def ajouter_contact():
+    pass
+
+
+def afficher_contacts():
+    pass
+
+
+def supprimer_contact():
+    pass
+
+
 while True:
     print("========== MENU ==========")
     print("1. Ajouter un contact ")
