@@ -16,9 +16,9 @@ def ajouter_contact():
     email = input("entrer l'email : ")
 
     contact= {
-        "nom"= nom,
-        "telephone"=telephone,
-        "email"=email
+        "nom": nom,
+        "telephone":telephone,
+        "email":email
     }
         
     contacts.append(contact)
@@ -47,7 +47,31 @@ def afficher_contacts():
 
 
 def supprimer_contact():
-    pass
+    afficher_contacts()
+
+    try:
+        numero = int(input("Quel contact supprimer ? "))
+
+        with open("contacts.txt", "r") as fichier:
+            contacts = fichier.readlines()
+
+        if numero < 1 or numero > len(contacts):
+            print("Numéro invalide.")
+            return
+
+        contacts.pop(numero - 1)
+
+        with open("contacts.txt", "w") as fichier:
+            for contact in contacts:
+                fichier.write(contact)
+
+        print("Contact supprimé !")
+
+    except ValueError:
+        print("Veuillez entrer un numéro.")
+    
+    except FileNotFoundError:
+        print("Aucun contact à supprimer.")
 
 
 while True:
