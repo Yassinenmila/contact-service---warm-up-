@@ -1,3 +1,5 @@
+import os
+
 contacts = []
 
 def sauvegarder_contacts():
@@ -75,6 +77,9 @@ def supprimer_contact():
 
 
 while True:
+    input("\nAppuyez sur Entrée pour continuer...")
+    os.system("clear")
+
     print("========== MENU ==========")
     print("1. Ajouter un contact ")
     print("2. Afficher les contacts ")
@@ -85,10 +90,13 @@ while True:
 
     match choix:
         case "1":
+            os.system("clear")
             ajouter_contact()
         case "2":
+            os.system("clear")
             afficher_contacts()
         case "3":
+            os.system("clear")
             supprimer_contact()
         case "4":
             break
